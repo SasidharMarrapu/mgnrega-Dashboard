@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MGNREGA Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>District Dashboard</h1>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <button onclick="fetchAllDistricts()">Fetch All Districts</button>
+    <button onclick="detectUserDistrict()">Detect My District</button>
+  </div>
+
+  <!-- Districts List -->
+  <div id="districtList" class="district-container"></div>
+
+  <!-- Performance Data -->
+  <div id="performanceData" class="performance-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
