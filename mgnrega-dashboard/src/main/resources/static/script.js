@@ -1,8 +1,7 @@
 const BASE_URL = "http://localhost:8082/api"; // Backend API base URL
 
-// ==========================
-// 1️⃣ Fetch and display all districts
-// ==========================
+// 1️. Fetch and display all districts
+
 async function fetchAllDistricts() {
     try {
         const response = await fetch(`${BASE_URL}/districts`);
@@ -29,9 +28,8 @@ async function fetchAllDistricts() {
     }
 }
 
-// ==========================
-// 2️⃣ Fetch performance data for a district
-// ==========================
+// 2️. Fetch performance data for a district
+
 async function fetchPerformance(districtId, districtName) {
     try {
         const response = await fetch(`${BASE_URL}/performance/${districtId}`);
@@ -78,9 +76,8 @@ async function fetchPerformance(districtId, districtName) {
     }
 }
 
-// ==========================
-// 3️⃣ Auto-detect user district via Geolocation
-// ==========================
+// 3️. Auto-detect user district via Geolocation
+
 async function detectUserDistrict() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
