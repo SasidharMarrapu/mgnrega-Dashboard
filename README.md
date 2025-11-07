@@ -191,10 +191,15 @@ Java Full Stack Developer | AI & Data Enthusiast
 
 
 ## 🏠 Dashboard View
-![Dashboard Screenshot](assets/dashboard.png)
+![Dashboard Screenshot](https://github.com/SasidharMarrapu/mgnrega-Dashboard/blob/master/mgnrega-dashboard/assets/dashboard.png?raw=true)
+
+---
 
 ## 📊 District Performance Example
-![Performance Table](assets/performance.png)
+![Performance Table](https://github.com/SasidharMarrapu/mgnrega-Dashboard/blob/master/mgnrega-dashboard/assets/performance.png?raw=true)
+
+---
 
 ## 🧩 System Architecture
-![Architecture Diagram](assets/Architecture.png)
+![Architecture Diagram](https://github.com/SasidharMarrapu/mgnrega-Dashboard/blob/master/mgnrega-dashboard/assets/Architecture.png?raw=true)
+
