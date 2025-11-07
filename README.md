@@ -136,11 +136,51 @@ mvn spring-boot:run
 
 ---
 
-### 3️. MySQL Setup
+
+### 🧩 3. MySQL Setup
+## 🏗️ Create Database
+
 ```
 CREATE DATABASE mgnrega;
 USE mgnrega;
+```
 
+- 🧱 Create Tables
+  
+- 1️⃣ districts Table
+
+Stores basic information about all districts and their state.
+
+```
+CREATE TABLE districts (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL
+);
+```
+
+2️⃣ monthly_performance Table
+
+Stores monthly data like jobs created, wages paid, and households worked —
+linked to a district via district_id.
+
+```
+CREATE TABLE monthly_performance (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    district_id BIGINT,
+    year INT NOT NULL,
+    month INT NOT NULL,
+    jobs_created INT NOT NULL,
+    households_worked INT NOT NULL,
+    wages_paid DOUBLE NOT NULL,
+    payment_delay_days DOUBLE NOT NULL,
+    last_updated DATE DEFAULT (CURRENT_DATE),
+    FOREIGN KEY (district_id) REFERENCES districts(id)
+);
+```
+
+📥 Insert Initial Data
+```
 INSERT INTO districts (name, state) VALUES
 ('Visakhapatnam', 'Andhra Pradesh'),
 ('Guntur', 'Andhra Pradesh'),
@@ -148,6 +188,20 @@ INSERT INTO districts (name, state) VALUES
 ('Kurnool', 'Andhra Pradesh'),
 ('Prakasam', 'Andhra Pradesh'),
 ('Vizianagaram', 'Andhra Pradesh');
+```
+```
+INSERT INTO monthly_performance
+(district_id, year, month, jobs_created, households_worked, wages_paid, payment_delay_days)
+VALUES
+(1, 2024, 10, 350, 120, 50000, 3),
+(1, 2024, 11, 400, 135, 54000, 2),
+(2, 2024, 10, 380, 140, 58000, 4),
+(2, 2024, 11, 410, 150, 60000, 1),
+(3, 2024, 10, 300, 110, 45000, 5),
+(3, 2024, 11, 320, 115, 47000, 3),
+(4, 2024, 10, 370, 125, 52000, 2),
+(5, 2024, 10, 340, 118, 49000, 3),
+(6, 2024, 11, 410, 132, 56000, 2);
 ```
 ---
 
